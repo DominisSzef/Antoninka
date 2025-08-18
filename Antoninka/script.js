@@ -78,8 +78,10 @@ function loadCarousel(id, items) {
     div.classList.add("carousel-item");
     if (i === 0) div.classList.add("active");
 
-    if (item.type === "img") {
-      div.innerHTML = `<img src="${item.src}" class="d-block mx-auto rounded shadow" style="max-height:900px; object-fit:contain;" alt="slajd ${i+1}">`;
+   if (item.type === "img") {
+  div.innerHTML = `<img src="${item.src}" class="d-block mx-auto rounded shadow" 
+    style="width:100%; height:auto; max-height:80vh; object-fit:contain;" alt="slajd ${i+1}">`;
+}
     } else if (item.type === "video") {
       div.innerHTML = `<video class="d-block w-100 rounded" controls>
                          <source src="${item.src}" type="video/mp4">
@@ -184,3 +186,4 @@ function formatDuration(ms) {
 // Odświeżanie co sekundę
 setInterval(updateTime, 1000);
 updateTime(); // natychmiastowe wyświetlenie
+
