@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Wszystkiego najlepszego Antonina!!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Kurtyna -->
+  <div id="curtain-left"></div>
+  <div id="curtain-right"></div>
+  <div id="curtain-button">
+    <button class="btn btn-light btn-lg shadow" onclick="openCurtain()">Otwórz kurtynę 🎁</button>
+  </div>
+
+  <!-- Nagłówek -->
+  <header class="text-center p-4">
+    <h1 class="fw-bold text-light">🌹 Wszystkiego najlepszego Antonina!! 🌹</h1>
+    <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
+      <button class="btn btn-pink shadow" onclick="showSection('photos')">
+        <i class="bi bi-images me-2"></i> Zdjęcia
+      </button>
+      <button class="btn btn-pink shadow" onclick="showSection('wishes')">
+        <i class="bi bi-envelope-heart me-2"></i> Życzenia
+      </button>
+      <button class="btn btn-pink shadow" onclick="showSection('plans')">
+        <i class="bi bi-geo-alt-fill"></i> Plany
+      </button>
+      <button class="btn btn-pink shadow" onclick="showSection('questions')">
+        <i class="bi bi-chat-heart me-2"></i> Pytania
+      </button>
+    </div>
+  </header>
+
+  <!-- Główna zawartość -->
+  <main class="container py-5">
+
+<!-- Multimedia: zdjęcia + filmy -->
+<div class="box" id="photos" style="display:block;">
+    <h2 class="text-center text-light mb-4">Nasze zdjęcia 📸</h2>
+    <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" ><!-- JS wypełni zdjęciami i filmami --></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+
+    <!-- Zdjęcia
+    
+      <div id="carouselPhotos" class="carousel slide shadow rounded" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="Fotos/Antonina (1).jpg" class="d-block w-100" alt="Zdjęcie 1">
+          </div>
+          <div class="carousel-item">
+            <img src="Fotos/Antonina (1).mp4" class="d-block w-100" alt="Zdjęcie 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/photo3.jpg" class="d-block w-100" alt="Zdjęcie 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div> -->
+
+    <!-- Życzenia -->
+    <div class="box" id="wishes">
+      <h2 class="text-center text-light mb-4">Życzenia dla Ciebie 💌</h2>
+      <div class="glass-box p-4">
+        <p class="lead text-center text-light">
+          Najdroższa Antonino, życzę Ci wszystkiego najlepszego, dużo miłości, szczęścia i spełnienia marzeń. 💖  
+          Każdy dzień z Tobą to dla mnie szczesliwy. Spedzanie z toba każdego wolnego czasu jest jak miód dla mojego serca. 🌸
+          Twoj uśmiech rozświetla moje dni, a Twoja obecność sprawia, że świat jest piękniejszy.
+          Każde twoje spojrzenie sprawia, że moje serce bije szybciej, a Twoje słowa są dla mnie jak najpiękniejsza melodia. 🎶
+          Lubie nasze rozmowy i Spedzanie czasu razem czuje wtedy ze wiem co to znaczy kochać i być kochanym. 💞
+          Mam wielka Nadzieje Moja Afrodyto , Bogini Miłosci , Kwiecie Lotosu , Promyczku Nadzieji , Ostanie wsochedze Słonca, że nasze wspólne chwile będą trwały wiecznie. 🌹  
+          Dziękuję, że jesteś w moim życiu i że mogę dzielić z Tobą te wyjątkowe chwile.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="box" id="plans">
+        <h2 class="text-center text-light mb-4">Plany na wakacje 🌍</h2>
+      
+        <div id="carouselPlans" class="carousel slide shadow rounded" data-bs-ride="carousel">
+          <div class="carousel-inner rounded" id="carouselInnerPlans"></div>
+      
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlans" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselPlans" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+      
+<!-- 
+    Plany
+    <div class="box" id="plans">
+      <h2 class="text-center text-light mb-4">Plany na wakacje 🌍</h2>
+      <div id="carouselPlans" class="carousel slide shadow rounded" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="img/paryz.jpg" class="d-block w-100" alt="Paryż">
+          </div>
+          <div class="carousel-item">
+            <img src="img/venecja.jpg" class="d-block w-100" alt="Wenecja">
+          </div>
+          <div class="carousel-item">
+            <img src="img/zakopane.jpg" class="d-block w-100" alt="Zakopane">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlans" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPlans" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div> -->
+
+    <!-- Pytania -->
+    <div class="box" id="questions">
+      <h2 class="text-center text-light mb-4">Pytania dla nas 💕</h2>
+      <div id="carouselQuestions" class="carousel slide shadow rounded" data-bs-ride="carousel">
+        <div class="carousel-inner" id="questionsInner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselQuestions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselQuestions" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* Romantyczne gradientowe tło */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7, #ff758c, #e60073);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    min-height: 100vh;
+  }
+  
+  /* animacja gradientu */
+  @keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  /* kurtyna */
+  #curtain-left, #curtain-right {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #b30059;
+    z-index: 10;
+    transition: transform 2s ease-in-out;
+  }
+  #curtain-left { left: 0; }
+  #curtain-right { right: 0; }
+  
+  #curtain-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
+  
+  /* przyciski */
+  .btn-pink {
+    background: #ff4da6;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+  }
+  .btn-pink:hover {
+    background: #e60073;
+    color: white;
+  }
+  
+  /* boxy */
+  .box {
+    display: none;
+  }
+  
+  .glass-box {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+  }
+
+/* Tylko zdjęcia w karuzeli */
+.carousel-inner {
+
+    
+    max-width: 80%;     
+    object-fit: contain; 
+    display: block;
+    margin: 0 auto;     
+    border-radius: 15px; 
+  }
+
+  
