@@ -147,3 +147,40 @@ const photosPL = [
   
   createCarouselItems();
   
+  function updateTime() {
+  const now = new Date();
+
+  // Czas od 26 maja
+  const startMay26 = new Date(2025, 4, 26); // miesiące liczone od 0!
+  const diffMay26 = now - startMay26;
+  document.getElementById('timeSinceMay26').textContent = formatDuration(diffMay26);
+
+  // Czas od 22 marca
+  const startMarch22 = new Date(2025, 2, 22);
+  const diffMarch22 = now - startMarch22;
+  document.getElementById('timeSinceMarch22').textContent = formatDuration(diffMarch22);
+}
+
+// Funkcja formatująca różnicę czasu w lata, miesiące, dni, godziny, minuty, sekundy
+function formatDuration(ms) {
+  let seconds = Math.floor(ms / 1000);
+  let minutes = Math.floor(seconds / 60);
+  let hours = Math.floor(minutes / 60);
+  let days = Math.floor(hours / 24);
+
+  const years = Math.floor(days / 365);
+  days -= years * 365;
+
+  const months = Math.floor(days / 30);
+  days -= months * 30;
+
+  hours = hours % 24;
+  minutes = minutes % 60;
+  seconds = seconds % 60;
+
+  return `${years} lat, ${months} miesięcy, ${days} dni, ${hours} godzin, ${minutes} minut, ${seconds} sekund`;
+}
+
+// Odświeżanie co sekundę
+setInterval(updateTime, 1000);
+updateTime(); // natychmiastowe wyświetlenie
