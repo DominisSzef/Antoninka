@@ -153,7 +153,7 @@ const photosPL = [
   const now = new Date();
 
   // Czas od 26 maja
-  const startMay26 = new Date(2025, 4, 26); // miesiące liczone od 0!
+  const startMay26 = new Date(2025, 4, 25); // miesiące liczone od 0!
   const diffMay26 = now - startMay26;
   document.getElementById('timeSinceMay26').textContent = formatDuration(diffMay26);
 
@@ -186,5 +186,6 @@ function formatDuration(ms) {
 // Odświeżanie co sekundę
 setInterval(updateTime, 1000);
 updateTime(); // natychmiastowe wyświetlenie
+
 
 
